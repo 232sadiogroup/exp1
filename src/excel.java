@@ -23,8 +23,8 @@ public class excel {
         }
     }
 
-    // 添加行
-    public void addRow(ArrayList<String> data) {
+    // 按行添加
+    void addRow(ArrayList<String> data) {
         row = sheet.createRow(sheet.getLastRowNum() + 1);
         for (int i = 0; i < data.size(); i++) {
             cell = row.createCell(i);

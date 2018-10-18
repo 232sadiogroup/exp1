@@ -40,14 +40,14 @@ public class Main {
             data.add(re(str, regex[i]));
         }
 
-        // 换行符替换为空格
+        // 将教育信息和标签中的换行符替换为空格
         for (int i = 6; i <= 7; i++) {
             String s = data.get(i);
             if (s != null)
                 data.set(i, s.replace('\t', ' '));
         }
 
-        // 微博认证处理
+        // 微博认证处理，有数据为是，空为否
         if (data.get(8) == null)
             data.set(8, "否");
         else
@@ -56,6 +56,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
+        // 输入文件
         String pathname = "src/data.txt";
         File filename = new File(pathname);
         InputStreamReader reader = new InputStreamReader(new FileInputStream(filename));
